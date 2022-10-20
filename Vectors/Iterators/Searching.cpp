@@ -25,11 +25,22 @@ int main()
 	v.emplace_back("Pens",200);
 	v.emplace_back("Books",50);
 	v.emplace_back("Gifts",100);
+
+    string name;
+    cout<<"Enter Item : ";
+    getline(cin,name);
+
+    vector<shop> :: iterator it;
+    for(it=v.begin();it<=v.end();it++)
+    {
+        if(it->item == name)
+        {
+            cout<<"Sales are : "<<it->sale;
+        }
+    }
+
 }
 
 /*
-This code is efficient as it will not create copies and it will reserve size 3 for 3 inputs 
-instead of increase size everytime for every input.
-emplace_back : Instead of passing the object we pass the values for the population constructor parameter and then create object
-We cannot pass direct values with push_back , we need to use emplace_back
+Using Iterators to search 
 */

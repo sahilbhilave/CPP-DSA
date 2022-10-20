@@ -2,17 +2,17 @@
 
 using namespace std;
 
-struct population
+struct shop
 {
-	string state;
-	long p;
+	string item;
+	long sale;
 
-	population(string state, long p)
-	:state(state),p(p)
+	shop(string state, long sale)
+	:item(item),sale(sale)
 	{}
 
-	population(const population &pop)
-	:state(pop.state),p(pop.p)
+	shop(const shop &pop)
+	:item(pop.item),sale(pop.sale)
 	{
 		std::cout<<"Copied";
 	}
@@ -20,10 +20,10 @@ struct population
 
 int main()
 {
-	vector<population> v;
-	v.push_back(population("Maharashtra",12323));
-	v.push_back(population("Delhi",133223));
-	v.push_back(population("Tamil Nadu",122123));
+	vector<shop> v;
+	v.push_back(shop("Pens",200));
+	v.push_back(shop("Books",50));
+	v.push_back(shop("Gifts",100));
 }
 
 /*
