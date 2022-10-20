@@ -7,15 +7,9 @@ struct shop
 	string item;
 	long sale;
 
-	shop(string state, long sale)
+	shop(string item, long sale)
 	:item(item),sale(sale)
 	{}
-
-	shop(const shop &pop)
-	:item(pop.item),sale(pop.sale)
-	{
-		std::cout<<"Copied";
-	}
 };
 
 int main()
@@ -30,14 +24,18 @@ int main()
     cout<<"Enter Item : ";
     getline(cin,name);
 
-    vector<shop> :: iterator it;
-    for(it=v.begin();it<=v.end();it++)
+    for(auto it=v.begin();it<=v.end();it++)
     {
         if(it->item == name)
         {
             cout<<"Sales are : "<<it->sale;
         }
     }
+
+	for(auto it:v)
+	{
+		cout<<"\nItem Name : "<<it.item<<"\nSales : "<<it.sale<<"\n";
+	}
 
 }
 
